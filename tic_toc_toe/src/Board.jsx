@@ -1,5 +1,8 @@
 import calculateStatus from "./CalculateStatus";
 import calculateTurns from "./calculateTurns";
+import calculateWinner from "./calculateWinner";
+import Square from "./Square";
+
 function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
   const turns = calculateTurns(squares);
