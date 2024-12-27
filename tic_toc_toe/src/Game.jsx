@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { combine } from "zustand/middleware";
-
+import Square from "./Square";
 const useGameStore = create(
   combine(
     {
@@ -29,28 +29,6 @@ const useGameStore = create(
     }
   )
 );
-
-function Square({ value, onSquareClick }) {
-  return (
-    <button
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 0,
-        backgroundColor: "#fff",
-        border: "1px solid #999",
-        outline: 0,
-        borderRadius: 0,
-        fontSize: "1rem",
-        fontWeight: "bold",
-      }}
-      onClick={onSquareClick}
-    >
-      {value}
-    </button>
-  );
-}
 
 function Board({ xIsNext, squares, onPlay }) {
   const winner = calculateWinner(squares);
